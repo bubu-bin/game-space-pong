@@ -16,7 +16,7 @@ setTimeout(() => {
   intro.setAttribute('style', 'display:none')
   displayStats.setAttribute('style', 'display:block;')
 
-},20000)
+},0)
 
 breakIntro.addEventListener('click', () => {
   canvas.setAttribute('style', "display: block;")
@@ -36,8 +36,10 @@ mySpeed = document.querySelector('#my-speed')
 playAgain.innerHTML = "Start"
 
 playAgain.addEventListener('click', () => {
+
   playAgain.style.display = 'none';
   animate()
+
 })
 
 addScorePC = 0;
@@ -248,10 +250,12 @@ function collisionDetection(p,b) {
     // WHEN BALL GOES BEYOND SCOPE
   if (b.x + b.radius < 0 || b.x > innerWidth + b.radius   ) {
 
+
     whoWins = directionY > 0 ? scorePlayer : scorePC;
     score = directionY > 0 ? addScorePC += 1 : addScorePlayer += 1
     whoWins.innerHTML = score
     mySpeed.innerHTML = speed;
+
 
     b.x = (innerWidth / 2) + b.radius
     b.y = (innerHeight/2) - b.radius
@@ -269,11 +273,14 @@ function collisionDetection(p,b) {
 }
 
 
+
+
 function reset(ball,d) {
 
 
   repeatGame.addEventListener('click', () => {
     statusEnter = true;
+    mySpeed.innerHTML= 8;
   })
 
   if (statusEnter) {
@@ -281,7 +288,6 @@ function reset(ball,d) {
     ball.y = (innerHeight/2) - ball.radius
     speed = 8;
     ball.dx = speed * -d;
-    console.log(d);
     ball.dy = 0;
 
     repeatGame.setAttribute('style', "display:none")

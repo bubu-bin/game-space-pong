@@ -39,7 +39,7 @@
 .wrapper-3d-text{
 
   height: 100%;
-  width: 85%;
+  width: 100%;
   position: relative;
   margin: 0 auto;
   perspective: 400px;
@@ -54,7 +54,7 @@
   position: absolute;
   font-size: 60px;
   text-align: justify;
-  animation: scroll 35s linear forwards;
+  animation: scroll 40s linear forwards;
 
   /* transform: translateZ(-5000px) rotateX(20deg); */
   /* transform: rotateX(50deg); */
@@ -71,8 +71,9 @@
 
 
 .scroll-text p{
-  color: white;
+  color: #FBE83B;
   line-height: 85px;
+  /* font-family:  */
   /* margin-top: 1rem; */
 }
 
@@ -83,8 +84,8 @@
     transform: translateZ(0) rotateX(30deg);
   }
   to {
-    top: -400%;
-    transform: translateZ(-1500px) rotateX(40deg);
+    top: -800%;
+    transform: translateZ(-1750px) rotateX(35deg);
   }
 }
 
